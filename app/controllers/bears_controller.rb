@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class BearsController < ApplicationController
-  def index; end
+  def index
+    @bears = Bear.all
+  end
 
   def new
     @bear = Bear.new
@@ -14,6 +16,20 @@ class BearsController < ApplicationController
       redirect_to bears_path
     else
       render :new
+    end
+  end
+
+  def edit
+    @bear = Bear.find(params[:id])
+  end
+
+  def update
+    @bear = Bear.find(params[:id])
+    password = params[:bear].fetch(:password)
+    if password == correct_password && @bear.update(bear_params)
+      redirect_to bears_path
+    else
+      render :edit
     end
   end
 

@@ -1,3 +1,13 @@
-<div>
-  Under construction
+<div class="px-4 py-2 text-lg xl:w-1/2 sm:w-full">
+  <% @bears.each do |bear| %>
+    <div class=>
+      <div class="font-bold underline offset"> <%= bear.title %></div>
+      <%= simple_format(bear.content, class: 'px-2 py-1 italic') %>
+      <% if bear.image.present? %>
+        <div class="flex justify-center">
+          <img src="<%= image_url(bear.image) %>">
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
