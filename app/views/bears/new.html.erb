@@ -1,0 +1,10 @@
+<%= form_with model: @bear, class: 'flex flex-col w-1/4' do |f| %>
+  <%= label_tag :title %>
+  <%= f.text_field :title %>
+  <%= label_tag :content %>
+  <%= f.text_area :content, class: 'p-2' %>
+  <%= label_tag :password %>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.submit 'Submit', class: 'w-20' %>
+<% end %>

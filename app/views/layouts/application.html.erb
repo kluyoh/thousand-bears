@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ThousandBears</title>
+    <title>Thousand Bear Woods</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,12 +15,10 @@
   </head>
 
   <body class="bg-green-400">
-    <nav id="nav" class="flex flex-row justify-center h-36 p-2">
-      <img class="object-contain" src="<%= image_url('bac_run.webp')%>">
-      <div id="title" class="flex items-center">
-        <span class="text-3xl text-center">Thousand Bear Woods</span>
-      </div>
-      <img class="object-contain" src="<%= image_url('bac_cool.png') %>">
+    <%= render '/shared/banner'%>
+    <nav class="flex justify-center text-blue-800 mb-2 text-lg">
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Bears', bears_path, class: 'ml-2' %>
     </nav>
     <div class="flex flex-col items-center">
     <%= yield %>
