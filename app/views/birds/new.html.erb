@@ -1,0 +1,12 @@
+<%= form_with model: @bird, class: 'flex flex-col xl:w-1/2 px-4 sm:w-full px-2' do |f| %>
+  <%= label_tag :title %>
+  <%= f.text_field :title, class: 'p-2' %>
+  <%= label_tag :content %>
+  <%= f.text_area :content, rows: 17, class: 'p-2' %>
+  <%= label_tag :image %>
+  <%= f.text_field :image, class: 'p-2' %>
+  <%= label_tag :password %>
+  <%= f.password_field :password, class: 'p-2' %>
+  <br>
+  <%= f.submit 'Submit', class: 'w-20' %>
+<% end %>

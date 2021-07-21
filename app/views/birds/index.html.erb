@@ -1,0 +1,14 @@
+<div class="px-4 py-2 text-lg xl:w-1/2 sm:w-full">
+  <% @birds.each do |bird| %>
+    <div class>
+      <div class="font-bold underline offset"> <%= bird.title %></div>
+      <%= simple_format(bird.content, class: 'px-2 py-1 italic') %>
+      <div class="italic text-right text-base pr-4">- <%= bird.created_at.to_date.strftime('%m/%d/%Y') %></div>
+      <% if bird.image.present? %>
+        <div class="flex justify-center">
+          <img src="<%= image_url(bird.image) %>">
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
