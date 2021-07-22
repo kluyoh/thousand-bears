@@ -2,7 +2,7 @@
 
 class BearsController < ApplicationController
   def index
-    @bears = Bear.all
+    @bears = Bear.all.reverse_order
   end
 
   def new

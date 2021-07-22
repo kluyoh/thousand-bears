@@ -2,7 +2,7 @@
 
 class BirdsController < ApplicationController
   def index
-    @birds = Bird.all
+    @birds = Bird.all.reverse_order
   end
 
   def new
